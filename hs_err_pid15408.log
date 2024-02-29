@@ -1,0 +1,223 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:44), pid=15408, tid=22644
+#
+# JRE version:  (17.0.9+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.9+9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages xxxxxx
+
+Host: AMD Ryzen 7 4700U with Radeon Graphics         , 8 cores, 7G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+Time: Tue Jan 16 18:01:14 2024 Eastern Standard Time elapsed time: 0.032747 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000218b4212d00):  JavaThread "Unknown thread" [_thread_in_vm, id=22644, stack(0x00000050e3900000,0x00000050e3a00000)]
+
+Stack: [0x00000050e3900000,0x00000050e3a00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67cf49]
+V  [jvm.dll+0x83478a]
+V  [jvm.dll+0x83624e]
+V  [jvm.dll+0x8368b3]
+V  [jvm.dll+0x247f1f]
+V  [jvm.dll+0xa6b4b]
+V  [jvm.dll+0x2e7b77]
+V  [jvm.dll+0x2df99b]
+V  [jvm.dll+0x806031]
+V  [jvm.dll+0x36cf31]
+V  [jvm.dll+0x7e4aac]
+V  [jvm.dll+0x3f07af]
+V  [jvm.dll+0x3f23e1]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa58]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff82e1fee98, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000218b426d140 GCTaskThread "GC Thread#0" [stack: 0x00000050e3a00000,0x00000050e3b00000] [id=22476]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff82d9bcac0]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000218b420b920] Heap_lock - owner thread: 0x00000218b4212d00
+
+Heap address: 0x0000000089400000, size: 1900 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000089400000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff82dda6c79]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.023 Loaded shared library C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7bd040000 - 0x00007ff7bd04e000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\javaw.exe
+0x00007ff89a870000 - 0x00007ff89aa87000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff8998a0000 - 0x00007ff899964000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff898000000 - 0x00007ff8983a6000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff88f0e0000 - 0x00007ff88f0fb000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\VCRUNTIME140.dll
+0x00007ff88f100000 - 0x00007ff88f117000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\jli.dll
+0x00007ff898430000 - 0x00007ff898541000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff899690000 - 0x00007ff89983e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff897bb0000 - 0x00007ff897bd6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff88d5a0000 - 0x00007ff88d833000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100\COMCTL32.dll
+0x00007ff899970000 - 0x00007ff899999000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff898790000 - 0x00007ff898837000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff897e20000 - 0x00007ff897f38000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff897be0000 - 0x00007ff897c7a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff899b50000 - 0x00007ff899b81000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff8912e0000 - 0x00007ff8912ec000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\vcruntime140_1.dll
+0x00007ff88e880000 - 0x00007ff88e90d000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\msvcp140.dll
+0x00007ff82d6d0000 - 0x00007ff82e331000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\server\jvm.dll
+0x00007ff898a30000 - 0x00007ff898ae3000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff8995e0000 - 0x00007ff899688000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff897c80000 - 0x00007ff897ca8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff89a710000 - 0x00007ff89a827000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff896a30000 - 0x00007ff896a7d000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff86aea0000 - 0x00007ff86aea9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff8903d0000 - 0x00007ff890404000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff88ea10000 - 0x00007ff88ea1a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff8999a0000 - 0x00007ff899a11000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff896a10000 - 0x00007ff896a23000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff896cd0000 - 0x00007ff896ce8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff86ef20000 - 0x00007ff86ef2a000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\jimage.dll
+0x00007ff8953c0000 - 0x00007ff8955f3000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff898f90000 - 0x00007ff899319000 	C:\WINDOWS\System32\combase.dll
+0x00007ff899a20000 - 0x00007ff899af7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff88ecd0000 - 0x00007ff88ed02000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff8983b0000 - 0x00007ff89842a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff86acb0000 - 0x00007ff86acd5000 	C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100;C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: xxxxxx
+java_class_path (initial): C:\Users\Ahad  Manik\eclipse-workspace\maven_project\target\test-classes;C:\Users\Ahad  Manik\eclipse-workspace\maven_project\target\classes;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-java\4.16.1\selenium-java-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-api\4.16.1\selenium-api-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.16.1\selenium-chrome-driver-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.16.1\selenium-chromium-driver-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-json\4.16.1\selenium-json-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.16.1\selenium-manager-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v118\4.16.1\selenium-devtools-v118-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v119\4.16.1\selenium-devtools-v119-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v120\4.16.1\selenium-devtools-v120-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.16.1\selenium-devtools-v85-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.16.1\selenium-edge-driver-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.16.1\selenium-firefox-driver-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-http\4.16.1\selenium-http-4.16.1.jar;C:\Users\Ahad  Manik\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Ahad  Manik\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.16.1\selenium-
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 125829120                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1992294400                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 1992294400                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17
+PATH=C:/Users/Ahad  Manik/Desktop/AUTOMATION/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin/server;C:/Users/Ahad  Manik/Desktop/AUTOMATION/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Users\Ahad  Manik\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Git\cmd;C:\Users\Ahad  Manik\Desktop\AUTOMATION\apache-maven-3.9.6\bin;C:\Users\Ahad  Manik\AppData\Local\Microsoft\WindowsApps;C:\Users\Ahad  Manik\Desktop\AUTOMATION\eclipse;
+USERNAME=Ahad  Manik
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
+TMP=C:\Users\AHADMA~1\AppData\Local\Temp
+TEMP=C:\Users\AHADMA~1\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+OS uptime: 1 days 17:56 hours
+
+CPU: total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 23 model 96 stepping 1 microcode 0x0, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt
+Processor Information for all 8 processors :
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+
+Memory: 4k page, system-wide physical 7599M (192M free)
+TotalPageFile size 20322M (AvailPageFile size 5M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 53M, peak: 54M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.9+9) for windows-amd64 JRE (17.0.9+9), built on Oct 26 2023 14:01:42 by "admin" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
